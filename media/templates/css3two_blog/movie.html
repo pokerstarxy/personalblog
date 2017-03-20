@@ -1,0 +1,53 @@
+{% extends 'css3two_blog/blog_base.html' %}
+{% load static %}
+{% load mytags %}
+
+{% block content %}
+{% autoescape off %}
+<div id="container">
+	<table class="zebra">
+    <caption style="background-color: #1d1f21">Latest Movie</caption>
+		<thead>
+        	<tr>
+				<th>Name</th>
+                <th>Year</th>
+                <th>Area</th>
+                <th>XL</th>
+                <th>Baidu</th>
+            </tr>
+		</thead>
+        {% for mv_info in data %}
+        <tbody>
+        	<tr>
+            	<td >{{mv_info.name}}</td>
+                <td>{{mv_info.date}}</td>
+                <td>{{mv_info.country}}</td>
+                {% if mv_info.xl_url == 'none'   %}
+                <td>无</td>
+                {% else %}
+                <td><a href="{{ mv_info.xl_url }}">迅雷</a></td>
+                {% endif %}
+                {% if mv_info.bd_url == 'none'   %}
+                <td>无</td>
+                {% else %}
+                <td><a href="{{ mv_info.bd_url }}">{{ mv_info.bd_pwd }}</a></td>
+                {% endif %}
+            </tr>
+        </tbody>
+        {% endfor %}
+	</table>
+<div class="pagination">
+ {% if ne_page != 0 %}
+      <a class="next " href="/movies/{{ ne_page  }}/"> ← Newer </a>
+    {% endif %}
+   <a href="#">{{ pre_page }}</a>
+ {% if older_page != 0 %}
+      <a class="prev" href="/movies/{{ older_page }}/"> Older →  </a>
+    {% endif %}
+
+
+
+</div>
+</div>
+{% endautoescape %}
+{% endblock content %}

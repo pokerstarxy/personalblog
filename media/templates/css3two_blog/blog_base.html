@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  {% block head %}
+    <title>GeekFur</title>
+    <meta name="description" content="分享关于技术，生活">
+  {% endblock head %}
+  <link rel="shortcut icon" type="image/x-icon"
+        href="{% static 'images/favicon2.ico' %}"/>
+  <meta name="keywords" content="website keywords, website keywords"/>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400&
+              text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXY9%26"
+        rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400italic&
+              text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXY+/,'é"
+        rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=PT+Sans+Caption:700&text=PEAGSRLUVFYCOBNTJMDOH1234567890,'
+        rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Crimson+Text:700italic&
+              text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400&
+              text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css"
+        href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/zebra.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/article.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/gfm.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/hybrid.css' %}">
+
+  {% block pagecss %}{% endblock pagecss %}
+  <script>
+    // Google Analytics
+    window.ga = window.ga || function () {
+        (ga.q = ga.q || []).push(arguments)
+      };
+    ga.l = +new Date;
+    ga('create', 'UA-69544114-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script async src='https://google-analytics.com/analytics.js'></script>
+</head>
+
+<body>
+<div id="main" style="position: relative;">
+  <a href="https://github.com/pokerstarxy">
+    <img style="position: absolute; top: 0; right: 0; border: 0;"
+         src="{% static 'images/forkme.png' %}"
+         alt="Fork me on GitHub">
+  </a>
+  <header>
+    <div id="logo">
+      <div id="logo_text">
+        <h1><a href="/blog">GeekFur<span class="logo_colour"> blog</span></a>
+        </h1>
+        <h2>一人我饮酒独醉</h2>
+      </div>
+    </div>
+    <nav>
+      <div id="menu_container">
+        <ul class="sf-menu" id="nav">
+          <li><a href="/blog">Home</a></li>
+          <li><a href="/archive">Archives</a></li>
+          <li><a href="/about">About me</a></li>
+          <li><a href="/movies">Movies</a></li>
+          <li><a href="/talks">Webchat</a></li>
+
+          <!--<li><a href="/blog/contact">Contact me</a></li>-->
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div id="site_content">
+
+    <div class="content_container">
+      <span class="toggle-sidebar"></span>
+      <div class="content">
+        {% block content %}
+          Need to be filled by each page.
+          <!-- content should be written by myself  -->
+        {% endblock content %}
+        <br>
+      </div>
+    </div>
+
+
+    <aside id="sidebar_container">
+      <div class="sidebar">
+        <div class="bio" data-twttr-id="twttr-sandbox-0">
+          <div class="illustration">
+            <img src="/static/images/thumbnail.png" alt="GeekFur">
+            <h2 id="hi" style="font-size: 28px">Hi,I'm GeekFur</h2>
+          </div>
+          <div class="clear"></div>
+          <p>
+            Actions speak louder than words
+            <br>Free Software developer
+            <br>I code in Python
+          </p>
+          <!-- StackExchange User Flair http://stackoverflow.com/users/flair -->
+          <a href="https://stackoverflow.com/users/7321653/pokerstarxy"
+             target="_blank">
+              <a href="http://stackoverflow.com/users/7321653/pokerstarxy">
+                <img src="http://stackoverflow.com/users/flair/7321653.png"
+                  width="208" height="58"
+                  alt="profile for pokerstarxy at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
+                  title="profile for pokerstarxy at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+          </a>
+          <div class="zhihu-card" data-description="no" data-theme="github"
+               data-button="no" data-userhash="li-le-50-29" data-width="208px"></div>
+          <script async src="//cdn.jsdelivr.net/zhihu-card/latest/widget.js"></script>
+          <div id="social-logos">
+            <a href="mailto:geek.pokerstar.xy@gmail.com" target="_blank">
+              <img src="{% static 'images/webicon-mail-m.png' %}"
+                   alt="E-mail">
+            </a>
+            <a href="/rss" title="my feed"
+               target="_blank">
+              <img src="{% static 'images/webicon-rss-m.png' %}"
+                   alt="RSS feed">
+            </a>
+            <a href="https://github.com/pokerstarxy" title="GeekFur on GitHub"
+               target="_blank">
+              <img src="{% static 'images/webicon-github-m.png' %}"
+                   alt="GitHub logo">
+            </a>
+              <a href="http://www.jianshu.com/users/6d79bc34f6a0/timeline" title="GeekFur on Jianshu"
+               target="_blank">
+              <img src="{% static 'images/webicon-jianshu-m.png' %}"
+                   alt="GitHub logo">
+            </a>
+            <a href="https://stackoverflow.com/users/7321653/pokerstarxy"
+               title="GeekFur on stackoverflow" target="_blank">
+              <img src="{% static 'images/webicon-stackoverflow-m.png' %}"
+                   alt="GitHub logo">
+            </a>
+            <a href="https://twitter.com/pokerstarxy" title="Geekfur on Twitter"
+               target="_blank">
+              <img src="{% static 'images/webicon-twitter-m.png' %}"
+                   alt="Twitter logo">
+            </a>
+            <a href="https://plus.google.com/116221394288194071353"
+               title="GeekFur on Google+" target="_blank">
+              <img src="{% static 'images/webicon-googleplus-m.png' %}"
+                   alt="Google+ logo">
+            </a>
+{#            <a href="http://bangumi.tv/user/laike9m" title="laike9m on Bangumi"#}
+{#               target="_blank">#}
+{#              <img src="{% static 'images/webicon-bangumi-m.png' %}"#}
+{#                   alt="Bangumi logo">#}
+{#            </a>#}
+          </div>
+          <div style="margin-top: 15px">
+            <!-- Begin MailChimp Signup Form -->
+            <style type="text/css">
+              #mc_embed_signup {
+                clear: left;
+                font: 14px AlegreyaSans, Arial, sans-serif;
+              }
+
+              #mc_embed_signup form {
+                display: block;
+                position: relative;
+                text-align: left;
+                padding: 10px 0 10px 0
+              }
+
+              #mc_embed_signup h2 {
+                font-weight: bold;
+                padding: 0;
+                margin: 15px 0;
+                font-size: 1.4em;
+              }
+
+              #mc_embed_signup input {
+                border: 1px solid #999;
+                -webkit-appearance: none;
+              }
+
+              #mc_embed_signup input[type=checkbox] {
+                -webkit-appearance: checkbox;
+              }
+
+              #mc_embed_signup input[type=radio] {
+                -webkit-appearance: radio;
+              }
+
+              #mc_embed_signup input:focus {
+                border-color: #333;
+              }
+
+              #mc_embed_signup .button {
+                clear: both;
+                background-color: #aaa;
+                border: 0 none;
+                border-radius: 4px;
+                color: #FFFFFF;
+                cursor: pointer;
+                display: inline-block;
+                font-size: 15px;
+                font-weight: bold;
+                height: 32px;
+                line-height: 32px;
+                margin: 0 5px 10px 0;
+                padding: 0;
+                text-align: center;
+                text-decoration: none;
+                vertical-align: top;
+                white-space: nowrap;
+                width: auto;
+              }
+
+              #mc_embed_signup .button:hover {
+                background-color: #777;
+              }
+
+              #mc_embed_signup .small-meta {
+                font-size: 11px;
+              }
+
+              #mc_embed_signup .nowrap {
+                white-space: nowrap;
+              }
+
+              #mc_embed_signup .clear {
+                clear: none;
+                display: inline;
+              }
+
+              #mc_embed_signup label {
+                display: block;
+                font-size: 16px;
+                padding-bottom: 10px;
+                font-weight: bold;
+              }
+
+              #mc_embed_signup input.email {
+                display: block;
+                padding: 8px 0;
+                margin: 0 4% 10px 0;
+                text-indent: 5px;
+                width: 75%;
+                min-width: 130px;
+              }
+
+              #mc_embed_signup input.button {
+                display: block;
+                width: 35%;
+                margin: 0 0 10px 0;
+                min-width: 90px;
+              }
+
+              #mc_embed_signup div#mce-responses {
+                float: left;
+                top: -1.4em;
+                padding: 0 .5em 0 .5em;
+                overflow: hidden;
+                width: 90%;
+                margin: 0 5%;
+                clear: both;
+              }
+
+              #mc_embed_signup div.response {
+                margin: 1em 0;
+                padding: 1em .5em .5em 0;
+                font-weight: bold;
+                float: left;
+                top: -1.5em;
+                z-index: 1;
+                width: 80%;
+              }
+
+              #mc_embed_signup #mce-error-response {
+                display: none;
+              }
+
+              #mc_embed_signup #mce-success-response {
+                color: #529214;
+                display: none;
+              }
+
+              #mc_embed_signup label.error {
+                display: block;
+                float: none;
+                width: auto;
+                margin-left: 1.05em;
+                text-align: left;
+                padding: .5em 0;
+              }
+            </style>
+            <!--<link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">-->
+{#            <div id="mc_embed_signup">#}
+{#              <form#}
+{#                  action="//laike9m.us3.list-manage.com/subscribe/post?u=292026f5547a0cbd3ec8e9f6d&amp;id=416f7bcbc7"#}
+{#                  method="post" id="mc-embedded-subscribe-form"#}
+{#                  name="mc-embedded-subscribe-form" class="validate"#}
+{#                  target="_blank" novalidate>#}
+{#                <label for="mce-EMAIL">#}
+{#                  Sign up for email newsletter#}
+{#                </label>#}
+{#                <input type="email" value="" name="EMAIL" class="email"#}
+{#                       id="mce-EMAIL" placeholder="email address" required>#}
+{#                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->#}
+{#                <div style="position: absolute; left: -5000px;"><input#}
+{#                    type="text" name="b_292026f5547a0cbd3ec8e9f6d_416f7bcbc7"#}
+{#                    value="" placeholder="请输入搜索内容"></div>#}
+{#                <div class="clear"><input type="submit" value="Subscribe"#}
+{#                                          name="subscribe"#}
+{#                                          id="mc-embedded-subscribe"#}
+{#                                          class="button"></div>#}
+{#              </form>#}
+{#            </div>#}
+            <!--End mc_embed_signup-->
+          </div>
+          <br/>
+          <div id="blogroll" style="font-family: AlegreyaSansBold;">
+            <h2 style="font-size:18px; color: #333333">Blogroll</h2>
+            <p>
+              <a href="http://mysql.taobao.org/monthly/2015/05/" target="_blank" class="blogroll">MySQL</a>
+            </p>
+            <p>
+              <a href="http://kaito-kidd.com/" target="_blank" class="blogroll">Kait
+                o's Blog</a>
+            </p>
+            <p>
+              <a href="https://blog.lilydjwg.me" target="_blank"
+                 class="blogroll">依云's Blog</a>
+            </p>
+            <p>
+              <a href="http://zhangxiaoyang.me" target="_blank"
+                 class="blogroll">zhangxiaoyang.me</a>
+            </p>
+            <p>
+              <a href="http://blog.wuxianbin.cn" target="_blank"
+                 class="blogroll">Happybin's Blog</a>
+            </p>
+            <p>
+              <a href="http://www.tianjun.ml" target="_blank" class="blogroll">Tian
+                Jun</a>
+            </p>
+            <p>
+              <a href="http://bambooom.github.io" target="_blank"
+                 class="blogroll">Bambooom</a>
+            </p>
+          </div>
+        </div>
+        <!-- end about me -->
+      </div>
+    </aside>
+
+  </div>
+
+  <div id="scroll">
+    <a title="Scroll to the top" class="top" href="#">
+      <img src="{% static 'images/top.png' %}" alt="top"/>
+    </a>
+  </div>
+  <footer id="site-footer" style="padding-bottom: 20px">
+    <p>
+      <a href="/">Home</a> |
+      <a href="/archive">Archives</a> |
+      <a href="/about/">About</a> |
+      <a href="/movies">Movies</a> |
+        <a href="/contact">Contact
+      </a>
+    </p>
+    <p>
+      <a href="https://github.com/pokerstarxy/My_Blog">SourceCode@Github</a> |
+      <a href="https://bwh1.net/">Hosted on
+        Bangwagon</a> |
+      <a href="http://www.css3templates.co.uk">design from
+        css3templates</a>
+    </p>
+  </footer>
+</div>
+
+<!-- javascript at the bottom for fast page loading -->
+<script src="https://cdn.jsdelivr.net/highlight.js/9.9.0/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/jquery/2.0.3/jquery-2.0.3.min.js"></script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/jquery.ui/1.10.4/jquery-ui.min.js"></script>
+<script type="text/javascript">
+  var sidebar = $('.toggle-sidebar');
+  $(document).ready(function () {
+  });
+  $(window).load(function () {
+    $('.top').click(function () {
+      $('html, body').animate({scrollTop: 0}, 1000);
+      return false;
+    });
+    // run this only after the entire page has loaded to get real height
+    var toggle_height = $(".content").prop('scrollHeight') + 13.7;
+    sidebar.css("height", toggle_height);
+  });
+  sidebar.hover( // use jquery-ui
+    function () {
+      $(this).animate({backgroundColor: '#EBEBEB'}, 10);
+    },
+    function () {
+      $(this).animate({backgroundColor: '#f0f0f0'}, 10);
+    }
+  );
+  $.fn.clicktoggle = function (a, b) {
+    return this.each(function () {
+      var clicked = false;
+      $(this).click(function () {
+        if (clicked) {
+          clicked = false;
+          return b.apply(this, arguments);
+        }
+        clicked = true;
+        return a.apply(this, arguments);
+      });
+    });
+  };
+  sidebar.clicktoggle(
+    function () {
+      $('.content_container').css("margin-right", "11px");
+      $(this).css("width", "19px");
+      $('span.toggle-sidebar').addClass('alignright');
+    },
+    function () {  // return to original style
+      $('.content_container').css("margin-right", "295px");
+      $(this).css("width", "9px");
+      $('span.toggle-sidebar').removeClass('alignright');
+    }
+  );
+</script>
+</body>
+</html>
